@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>唯品会</title>
+	<style type="text/css">
+	*{margin: 0px; padding: 0px;}
+	ul,li{list-style: none; text-decoration: none;}
+	.box{
+		width: 100%;
+		height: 2000px; 
+		text-align: center;
+		font-size:12px;
+	}
+	/*头部*/
+	.header_1{
+		width: 100%;
+		height: 30px;
+		background-color: #F5F5F5;
+	}
+	.header_1 .centent{
+		width: 900px;
+		height: 30px;
+		margin: 0px auto;
+		/*border: 1px solid red;*/
+	}
+	.header_1 ul{
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.header_1 li{
+		line-height: 30px;
+		color:#A9A9A9;
+	}
+
+	.header_1 a{
+		color:#A9A9A9;
+	}
+	.header_1 a{
+		margin: 0px 8px;
+	}
+	/*头部2*/
+	.header_2{
+		width: 100%;
+		height: 120px;
+		/*border: 1px solid red;*/
+	}
+	.header_2 .p_1{
+		float: right;
+		text-align: center;
+		line-height: 120px;
+		margin:0px 330px 0px -330px ;
+		color: 	#808080;
+		font-size: 15px;
+	}
+
+	.header_2 img:nth-child(1) {
+		margin:0px 130px 18px -20px;
+	}
+	.header_2 .img_1{
+		padding-top: 10px;
+	}
+	/*导航栏*/
+	.nav_1{
+		width: 100%;
+		height: 40px;
+		border: 1px solid red;
+		background-color:#FF1493;
+		/*position: fixed;*/
+		z-index: 99;
+	}
+	.nav_1 .nav_box{
+		width: 900px;
+		height: 40px;
+		margin: 0px auto;
+	}
+	.nav_1 .nav_x{
+		height: 100%;
+		display: block;
+		line-height: 40px;
+		color: white;
+		float: left;
+		font-size: 15px;
+		padding: 0px 20px;
+		cursor: pointer;
+	}
+	.nav_1 .nav_x:hover{
+		background-color: #DD22B8;
+	}
+	
+	.nav_left{
+		width: 70px;
+		border-radius: 6px;
+		border: 1px solid lightgray;
+		position: fixed;
+		margin:-90px 0px 0px 20px;
+		z-index: 99;
+		display:none;
+	}
+	.nav_left ul{
+		width: 60px;
+		margin: 5px; 
+	}
+	.nav_left ul li{
+		width: 100%;
+		height: 35px;
+		border-bottom: 1px solid lightgray;
+		border-radius: 4px;
+	}
+	.nav_left ul li a{
+		width: 100%;
+		height: 100%;
+		display: block;
+		border-radius: 5px;
+		line-height: 40px;
+		text-align: right;
+		color: darkgray;
+		font-size: 13px;
+		padding-right: 10px;
+		box-sizing: border-box;
+		background: url(images/iconNormal.png) no-repeat 0px 11px;
+		background-size: 40%;
+		cursor: pointer;
+	}
+	.nav_left label{
+		/*border: 1px solid blue;*/
+		padding-left: 20px;
+		cursor: pointer;
+	}
+	.nav_left ul li:last-child{
+		border: none;
+	}
+	.nav_left input:checked+li a {
+		background: url(images/iconWhite.png) no-repeat 3px center;
+		background-size: 30%;
+		color: white;
+		background-color: rgb(244,0,130);
+	}
+	.nav_left .notCurrent a:hover{
+		background: url(images/iconSelected.png) no-repeat 0px 11px;
+		background-size: 40%;
+		color: rgb(244,0,130);
+	}
+	.nav_left input{
+		display: none;
+	}
+	
+	/*imagesfade*/
+	.imagesfade{
+		width: 100%;
+		height: 500px;
+		margin-top: 40px;
+		/*border: 1px solid red;*/
+	}
+	.imagesfade .content{
+		width: 900px;
+		height: 100%;
+		margin:0px auto;
+	}
+	.imagesfade .images{
+		width: 900px;
+		height: 400px;
+		position: relative;
+	}
+	.imagesfade img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	.block_show{display: block;}
+	.block_none{display: none;}
+	.imagesfade .titles{
+		height: 50px;
+		width: 300px;
+		margin:0px auto;
+	}
+	.imagesfade p{
+		cursor: default;
+		text-align: center;
+		font-size: 14px;
+		height: 40px;
+		width: 150px;
+		float: left;
+		line-height: 40px;
+		color: rgb(160,160,160);
+	}
+	/*底部*/
+	.baozi{
+		width: 100%;
+		height: 1500px;
+	}
+	.baozi .footer{
+		width: 900px;
+		height: 700px;
+		margin: 0px auto;
+		/*border: 1px solid red;*/
+	}
+	.baozi .bgm{
+		width: 100%;
+		height: 80px;
+		position: relative;
+		/*border: 1px solid yellow;*/
+	}
+	.baozi span{
+		display: block;
+		width: 30%;
+		height: 2px;
+		top: 30px;
+		position: absolute;
+		background-color: lightgray;
+	}
+	.bgm .text_1 p:nth-child(1){
+		text-align: center;
+		font-size: 30px;
+		color: black;
+	}
+	.bgm .text_1 p:nth-child(2){
+		margin-top: 10px;
+		text-align: center;
+		font-size: 13px;
+		color: lightgray;
+	}
+	.baozi .imgs{
+		width: 100%;
+		height: 630px;
+		/*border: 1px solid blue;*/
+	}
+	.baozi .imgs .good {
+		width: 50%;
+		height: 300px;
+		position: relative;
+		float: left;
+	}
+	.baozi .imgs .good_1 {
+		width: 50%;
+		height: 300px;
+		position: relative;
+		float: right;
+	}
+	.good img{
+		position: absolute;
+	}
+	.good_1 img{
+		position: absolute;
+	}
+	.imgs img:nth-child(1){
+		width: 95%;
+		height: 95%;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	.imgs img:nth-child(2){
+		width: 80%;
+		height: 80%;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: 10px;
+		display: none;
+	}
+	.imgs .good:hover img:nth-child(1){
+		filter: blur(2px);
+	}
+	.imgs .good:hover img:nth-child(2){
+
+		display: block;
+	}
+	.imgs .good_1:hover img:nth-child(1){
+		filter: blur(2px);
+	}
+	.imgs .good_1:hover img:nth-child(2){
+		display: block;
+	}
+	/*侧边导航栏*/
+		/*.open_yes{display: block;}
+		.open_no{display: none;}*/
+	</style>
+	<script type="text/javascript">
+		function showme(index){
+			var arr = ["img_one","img_two"];
+			for (var i = 0; i < arr.length; i++) {
+				document.getElementById(arr[i]).className="block_none";
+			}
+			document.getElementById(arr[index]).className = "block_show";
+		}
+		function show(){
+			var leftobj = document.getElementById("left");
+			var box_top =window.pageYOffset;
+			console.log("box_top:"+ box_top);
+			if (box_top <= 700)
+			{
+				leftobj.style.display="none";
+			}else
+			{
+				leftobj.style.display = "block";
+			}
+		}
+		function siblings(elem){ //参数elem就是想取谁的兄弟节点，就把那个元素传进去 
+            var nodes=[]; //定义一个数组，用来存elem的兄弟元素 
+            var previ=elem.previousSibling; 
+            while(previ){ //先取o的哥哥们 判断有没有上一个哥哥元素，如果有则往下执行 previ表示previousSibling 
+                if(previ.nodeType===1){ 
+                    nodes.push(previ); 
+                } 
+                previ=previ.previousSibling; //最后把上一个节点赋给previ 
+            } 
+            nodes.reverse(); //把顺序反转一下 这样元素的顺序就是按先后的了 
+            var nexts=elem.nextSibling; //再取elem的弟弟 
+            while(nexts){ //判断有没有下一个弟弟结点 nexts是nextSibling的意思 
+                if(nexts.nodeType===1){ 
+                    nodes.push(nexts); 
+                } 
+                nexts=nexts.nextSibling; 
+            } 
+            return nodes; //最后按从老大到老小的顺序，把这一组元素返回 
+        }
+		var color_1 = document.getElementsByClassName("color_1");
+		for (var i = 0; i < color_1.length; i++) {
+			color_1[i].index= i ;
+			color_1[i].onclick = function(){
+				var index = this.index;
+				var nowcolor_1 = color_1[index];
+				for (var j = 0; j < color_1.length-1; j++) {
+					this.style.background="rgb(191,2,103)";
+					siblings(nowcolor_1)[j].style.background="#FF1493";
+				}
+			}
+		}
+		
+		window.onload = function(){
+		var nav_x = document.getElementsByClassName('nav_x')
+		for(var i = 0 ; i<nav_x.length ; i++){
+			nav_x[i].onclick = function(){
+				for(var j = 0 ; j<nav_x.length;j++){
+				nav_x[j].style.backgroundColor = ""
+				}	
+				this.style.backgroundColor = "#DD22B8"	
+			}		
+		}
+	}
+	</script>
+</head>
+<body  onscroll="show()">
+<div class="box" id="box">
+	<div class="header_1">
+		<div class="centent">
+			<ul>
+				<li><a href="#">更多</a></li>
+				<li><a href="#">手机版</a>/</li>
+				<li><a href="#">客户服务</a>/</li>
+				<li><a href="#">会员俱乐部</a>/</li>
+				<li><a href="#">我的收藏</a>/</li>
+				<li><a href="#">我的订单</a>/</li>
+				<li><a href="#">注册</a>/</li>
+				<li><a href="#">请登陆</a>/</li>
+			</ul>
+		</div>
+	</div>
+	<div class="header_2">
+		<img src="images/wph.png">
+		<img src="images/100good.jpg" class="img_1">
+		<img src="images/7day.jpg" class="img_1">
+		<img src="images/sendBack.jpg" class="img_1">
+		<p class="p_1">我的购物带</p>
+	</div>
+	<nav class="nav_1">
+		<div class="nav_box">
+			<div class="nav_x">首页</div>
+			<div class="nav_x">母婴</div>
+			<div class="nav_x">美妆</div>
+			<div class="nav_x">居家</div>
+			<div class="nav_x">男士</div>
+			<div class="nav_x">唯品国际</div>
+			<div class="nav_x">唯品金融</div>
+			<div class="nav_x">旅行</div>
+			<div class="nav_x">明天上线</div>
+		</div>
+	</nav>
+	<div class="nav_left" id="left">
+		<ul>
+			<input type="radio" name="jin" id="xan">
+			<li class="notCurrent"><a><label for="xan">精选</label></a></li>	
+			<input type="radio" name="jin" id="nv">		
+			<li class="notCurrent"><a><label for="nv">女装</label></a></li>	
+			<input type="radio" name="jin" id="xie">		
+			<li class="notCurrent"><a><label for="xie">鞋包</label></a></li>	
+			<input type="radio" name="jin" id="man">		
+			<li class="notCurrent"><a><label for="man">男士</label></a></li>	
+			<input type="radio" name="jin" id="yun">		
+			<li class="notCurrent"><a><label for="yun">运动</label></a></li>	
+			<input type="radio" name="jin" id="shipin">	
+			<li class="notCurrent"><a><label for="shipin">饰品</label></a></li>	
+			<input type="radio" name="jin" id="zhuang">	
+			<li class="notCurrent"><a><label for="zhuang">美妆</label></a></li>	
+			<input type="radio" name="jin" id="ying">	
+			<li class="notCurrent"><a><label for="ying">母婴</label></a></li>
+			<input type="radio" name="jin" id="jia">		
+			<li class="notCurrent"><a><label for="jia">居家</label></a></li>	
+			<input type="radio" name="jin" id="guo">		
+			<li class="notCurrent"><a><label for="guo">国际</label></a></li>	
+			<input type="radio" name="jin" id="shi">		
+			<li class="notCurrent"><a><label for="shi">食品</label></a></li>	
+			<input type="radio" name="jin" id="yu">		
+			<li class="notCurrent"><a><label for="yu">预告</label></a></li>
+		</ul>
+	</div>
+	<div class="imagesfade">
+		<div class="content">
+			<div class="images">
+				<img src="images/img1.jpg" class="block_show" id="img_one">
+				<img src="images/img2.jpg" class="block_none" id="img_two">
+			</div>
+			<div class="titles">
+				<p onMouseOver="showme(0)">今日特惠大牌</p>
+				<p onMouseOver="showme(1)">DKNY品牌日&nbsp2.8折起</p>
+			</div>
+		</div>
+	</div>
+	<div class="baozi">
+		<div class="footer">
+			<div class="bgm">
+				<span></span>
+				<div class="text_1">
+					<p>新特卖每日早10晚8上新</p>
+					<p>TODAY'S&nbspDEALS&nbspBRADN</p>
+				</div>
+			</div>
+			<div class="imgs">
+				<div class="good">
+					<img src="images/good1.png">
+					<img src="images/good2.png">
+				</div>
+				<div class="good">
+					<img src="images/good1.png">
+					<img src="images/good2.png">
+				</div>
+				<div class="good_1">
+					<img src="images/good1.png">
+					<img src="images/good2.png">
+				</div>
+				<div class="good_1">
+					<img src="images/good1.png">
+					<img src="images/good2.png">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
